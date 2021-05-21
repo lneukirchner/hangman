@@ -16,7 +16,8 @@ func clear() {
 
 func main() {
 	triesPtr := flag.Int("tries", 6, "The amount of tries that the answerer has.")
-
+	flag.Parse()
+	clear()
 	fmt.Print("Type your word in lowercase: ")
 	var word string
 	fmt.Scan(&word)
