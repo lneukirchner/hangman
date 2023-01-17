@@ -29,7 +29,7 @@ func main() {
 	var j int
 	var i int
 	var k int
-	for j = 0; j < len(word); j++ {
+	for j := 0; j < len(word); j++ {
 		answer = append(answer, "_")
 	}
 	for i = 0; i < tries; i++ {
@@ -37,9 +37,10 @@ func main() {
 		fmt.Println("You have", tries-i, "left.")
 		fmt.Println(answer)
 		var letter string
-		fmt.Scanln(&letter)
+		fmt.Scanln(&letter) //There's some sort of error here, I'm leaving fixing that up to the benevolent and awesome future Lucas
 		triedLetters = append(triedLetters, letter)
-		asciiValue := letter[0]
+		var asciiValue string
+		asciiValue = letter[0]
 		for k = 0; k < len(word); k++ {
 			if asciiValue == word[k] {
 				answer[k] = letter
